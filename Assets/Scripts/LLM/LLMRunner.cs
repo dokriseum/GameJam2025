@@ -81,7 +81,33 @@ public class LLMRunner : MonoBehaviour
     {
         return latestResponse;
     }
+
+    public IEnumerator WaitForResponse()
+    {
+        while (latestResponse == null || latestResponse.choices == null || latestResponse.choices.Length == 0)
+        {
+            yield return null;
+        }
+        responseTextBox.text = latestResponse.choices[0].text;
+    }
     
+    public IEnumerator WaitForResponse(Action<OllamaResponse> callback)
+    {
+        while (latestResponse == null || latestResponse.choices == null || latestResponse.choices.Length == 0)
+        {
+            yield return null;
+        }
+        callback?.Invoke(latestResponse);
+    }
+    
+    public IEnumerator WaitForResponse(Action<string> callback)
+    {
+        while (latestResponse == null || latestResponse.choices == null || latestResponse.choices.Length == 0)
+        {
+            yield return null;
+        }
+        callback?.Invoke(latestResponse.choices[0].text);
+    }
     /**
      * Beispiel
      * string generatedText = LLMRunner.instance.GetGeneratedText();
