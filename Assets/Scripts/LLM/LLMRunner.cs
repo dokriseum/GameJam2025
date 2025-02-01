@@ -17,10 +17,19 @@ using UnityEngine;
 using UnityEngine.Networking;
 using TMPro;
 
+using System;
+using System.Collections;
+using System.Text;
+using Newtonsoft.Json;
+using UnityEngine;
+using UnityEngine.Networking;
+using TMPro;
+
 public class LLMRunner : MonoBehaviour
 {
     public static LLMRunner instance;
-    public TMP_Text responseTextBox;  // TextMeshPro für UI-Ausgabe
+    public TMP_Text responseTextBox;
+    private OllamaResponse latestResponse; // Hier wird die gesamte Antwort gespeichert
 
     private void Awake()
     {
@@ -66,11 +75,11 @@ public class LLMRunner : MonoBehaviour
 
                 try
                 {
-                    OllamaResponse response = JsonConvert.DeserializeObject<OllamaResponse>(responseJson);
-                    if (response != null && response.choices != null && response.choices.Length > 0)
+                    latestResponse = JsonConvert.DeserializeObject<OllamaResponse>(responseJson);
+
+                    if (latestResponse != null && latestResponse.choices != null && latestResponse.choices.Length > 0)
                     {
-                     Debug.Log("RESPONSE: " + response.choices[0].text);
-                        responseTextBox.text = response.choices[0].text;
+                        responseTextBox.text = latestResponse.choices[0].text; // Antwort anzeigen
                     }
                 }
                 catch (Exception ex)
@@ -80,4 +89,59 @@ public class LLMRunner : MonoBehaviour
             }
         }
     }
+
+    public OllamaResponse GetLatestResponse()
+    {
+        return latestResponse;
+    }
+    
+    /**
+     * Beispiel
+     * string generatedText = LLMRunner.instance.GetGeneratedText();
+     * Debug.Log("Direkte Antwort: " + generatedText);
+     */
+    
+    public string GetGeneratedText()
+    {
+        return latestResponse != null ? latestResponse.Response : "";
+    }
+    
+    public void ExampleUsage()
+    {
+        if (LLMRunner.instance != null)
+        {
+            OllamaResponse response = LLMRunner.instance.GetLatestResponse();
+            if (response != null)
+            {
+                Debug.Log("Model: " + response.Model);
+                Debug.Log("Antwort: " + response.choices[0].text);
+                Debug.Log("Erstellungsdatum: " + response.CreatedAt);
+                Debug.Log("Antwort beendet?: " + response.Done);
+                Debug.Log("Gesamtdauer: " + response.TotalDuration);
+            }
+        }
+    }
+    
+    public void UseGeneratedResponse()
+    {
+        if (LLMRunner.instance != null)
+        {
+            OllamaResponse response = LLMRunner.instance.GetLatestResponse();
+            if (response != null && !string.IsNullOrEmpty(response.Response))
+            {
+                string generatedText = response.Response; // Nur die Antwort extrahieren
+                Debug.Log("Generierte Antwort: " + generatedText);
+
+                // Hier kannst du die Antwort weiterverwenden, z.B.:
+                MyCustomFunction(generatedText);
+            }
+        }
+    }
+
+    // Beispiel: Verwenden in einer anderen Funktion
+    public void MyCustomFunction(string text)
+    {
+        Debug.Log("Antwort wird weiterverwendet: " + text);
+    }
+
 }
