@@ -8,6 +8,11 @@ public class PublicOpinion : MonoBehaviour
     private int currentOpinion;
     private int opinionToSpend;
 
+    public void Start()
+   {
+      instance = this;
+   }
+
     public void IncreaseOpinion(int byScore)
     {
         currentOpinion += byScore;
