@@ -69,6 +69,7 @@ public class LLMRunner : MonoBehaviour
                     OllamaResponse response = JsonConvert.DeserializeObject<OllamaResponse>(responseJson);
                     if (response != null && response.choices != null && response.choices.Length > 0)
                     {
+                     Debug.Log("RESPONSE: " + response.choices[0].text);
                         responseTextBox.text = response.choices[0].text;
                     }
                 }
