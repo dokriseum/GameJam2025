@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6133897440393732428}
   - component: {fileID: 1024890791324684687}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Skill Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000024796, y: 127}
+  m_AnchoredPosition: {x: 2.508, y: 137}
   m_SizeDelta: {x: 206.935, y: 89.466}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2835347069160378148

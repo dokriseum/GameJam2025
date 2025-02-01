@@ -13,7 +13,7 @@ public class PublicOpinion : MonoBehaviour
     public TextMeshProUGUI opinionText;
     public Image opinionBar;
 
-    public void Start()
+    public void Awake()
    {
       instance = this;
       currentOpinion = opinionToSpend = 100;
