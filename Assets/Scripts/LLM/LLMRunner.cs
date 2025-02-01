@@ -1,3 +1,4 @@
+using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -6,9 +7,19 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class ModelRunner : MonoBehaviour
+public class LLMRunner : MonoBehaviour
 {
+   public static LLMRunner instance;
    public Text reponseTextBox;
+
+   public string prompt;
+
+   public void Start()
+   {
+      instance = this;
+      Debug.Log("Starting a request now with prompt: " + prompt);
+      StartCoroutine(Send(prompt));
+   }
    public IEnumerator Send(string text)
    {
       OllamaRequest request = new OllamaRequest();
