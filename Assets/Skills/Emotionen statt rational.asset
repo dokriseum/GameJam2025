@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c98bc6cc5a80643f9a3b67da34cf575, type: 3}
   m_Name: Emotionen statt rational
   m_EditorClassIdentifier: 
-  popularityScoreToUnlock: 0
-  titel: 
+  minPopularityScoreToUnlock: 0
+  icon: {fileID: 5601084914263436108, guid: e17c648a4685b707ca53882f86ee2f19, type: 3}
   beschreibung: 
   prompt: 
