@@ -1,16 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public List<DialogueOption> Moderationsfragen;
+
+    public GameObject dialoguePrefabModerator, dialoguePrefabPolitician;
+    public GameObject replyOptions;
+
+    public void InstantiateNewDialogue()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
