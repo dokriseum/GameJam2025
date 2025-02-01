@@ -1,5 +1,7 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PublicOpinion : MonoBehaviour
 {
@@ -8,9 +10,13 @@ public class PublicOpinion : MonoBehaviour
     private int currentOpinion;
     private int opinionToSpend;
 
+    public TextMeshProUGUI opinionText;
+    public Image opinionBar;
+
     public void Start()
    {
       instance = this;
+      currentOpinion = opinionToSpend = 100;
    }
 
     public void IncreaseOpinion(int byScore)
