@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c98bc6cc5a80643f9a3b67da34cf575, type: 3}
   m_Name: "Einfache L\xF6sungen"
   m_EditorClassIdentifier: 
-  popularityScoreToUnlock: 0
-  titel: 
+  minPopularityScoreToUnlock: 0
+  icon: {fileID: -6102805860222315482, guid: 579771fbfcc19c4ddb418ba67dbca9b3, type: 3}
   beschreibung: 
   prompt: 

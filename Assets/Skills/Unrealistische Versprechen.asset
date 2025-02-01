@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c98bc6cc5a80643f9a3b67da34cf575, type: 3}
   m_Name: Unrealistische Versprechen
   m_EditorClassIdentifier: 
-  popularityScoreToUnlock: 0
-  titel: 
+  minPopularityScoreToUnlock: 0
+  icon: {fileID: -7779410864712445973, guid: 6c2139c6b3aff0c788f1e7d9e1d8850c, type: 3}
   beschreibung: 
   prompt: 

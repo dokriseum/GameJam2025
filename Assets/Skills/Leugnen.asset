@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c98bc6cc5a80643f9a3b67da34cf575, type: 3}
   m_Name: Leugnen
   m_EditorClassIdentifier: 
-  popularityScoreToUnlock: 0
-  titel: 
+  minPopularityScoreToUnlock: 0
+  icon: {fileID: -8078686492968501694, guid: c48a7fb6dc284981487aba9912f47a8e, type: 3}
   beschreibung: 
   prompt: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c98bc6cc5a80643f9a3b67da34cf575, type: 3}
   m_Name: "S\xFCndenbock"
   m_EditorClassIdentifier: 
-  popularityScoreToUnlock: 0
-  titel: 
+  minPopularityScoreToUnlock: 0
+  icon: {fileID: -9082789242079819192, guid: 5293b508b7f0c60f59083ca7bc71fcb5, type: 3}
   beschreibung: 
   prompt: 
