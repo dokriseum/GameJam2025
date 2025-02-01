@@ -1,11 +1,20 @@
-using UnityEngine;
 using System;
+using Newtonsoft.Json;
 
-[System.Serializable]
+[Serializable]
 public class OllamaResponse
-{ 
-    public string id, @object, model, system_fingerprint; 
-    public long created;
-    public OllamaChoice[] choices; 
-    public OllamaUsage usage;
+{
+    [JsonProperty("model")]
+    public string Model { get; set; }
+
+    [JsonProperty("created_at")]
+    public string CreatedAt { get; set; }
+
+    [JsonProperty("choices")]
+    public OllamaChoice[] choices { get; set; }
+
+    public static OllamaResponse FromJson(string json)
+    {
+        return JsonConvert.DeserializeObject<OllamaResponse>(json);
+    }
 }
