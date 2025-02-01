@@ -1,7 +1,9 @@
-[System.Serializable]
+using System;
+using Newtonsoft.Json;
+
+[Serializable]
 public class OllamaChoice
 {
-    public string text; 
-    public int index;
-    public string finish_reason;
+    [JsonProperty("text")]
+    public string text { get; set; }
 }
