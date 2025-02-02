@@ -45,4 +45,11 @@ public class Skilltree : MonoBehaviour
             skill.SetInteractableState(CanAddThisSkill(skill.linkedSkill));
         }
     }
+
+    public void Platzhalter()//Liste als Übergabeparameter 
+    {
+        // Überprüfen ob es vorhanden ist in Übergabeparameter 
+
+        return // Boolean (True) wenn vorhanden
+    }
 }
