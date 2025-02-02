@@ -221,7 +221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -3153014035027738510, guid: a4f25d18e90c26f5d9d9b98e3af99843, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -302,6 +302,7 @@ MonoBehaviour:
   linkedSkill: {fileID: 0}
   iconImg: {fileID: 6401618103071634109}
   button: {fileID: 5345855519792299797}
+  colorWhenBought: {r: 0, g: 0, b: 0, a: 0}
   neededSkillsUnlocked: []
   linkedLinesIncoming: []
   text: {fileID: 699274760310357034}

@@ -1703,7 +1703,7 @@ RectTransform:
   m_GameObject: {fileID: 610190237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.77019, y: 0.77019, z: 0.77019}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1131614898}
@@ -1711,8 +1711,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836.067, y: -49.452}
-  m_SizeDelta: {x: 68.766, y: 339.36}
+  m_AnchoredPosition: {x: -868.916, y: -10.352}
+  m_SizeDelta: {x: 107.235, y: 332.431}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610190239
 MonoBehaviour:
@@ -3520,8 +3520,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.03
-  m_fontSizeBase: 16.03
+  m_fontSize: 23.99
+  m_fontSizeBase: 23.99
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5026,6 +5026,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 819941662}
     m_Modifications:
     - target: {fileID: 821413617799450835, guid: b683ccd1cacce99fe933abe0f8f7ac17, type: 3}
+      propertyPath: m_text
+      value: "Herzlich willkommen zu <b>\"Hart, aber KI\"</b>. Heute haben wir einen
+        Gast aus Th\xFCringen."
+      objectReference: {fileID: 0}
+    - target: {fileID: 821413617799450835, guid: b683ccd1cacce99fe933abe0f8f7ac17, type: 3}
       propertyPath: m_fontSize
       value: 23.2
       objectReference: {fileID: 0}
@@ -5675,33 +5680,65 @@ MonoBehaviour:
       f\xFCr die n\xE4chsten 4 Jahre."
     possibleModifications:
     - {fileID: 11400000, guid: 6d384cfe0014e12af8023e5d2d6411f4, type: 2}
-  - Moderationsfrage: Frage 2
-    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
-      f\xFCr die n\xE4chsten 4 Jahre."
+  - Moderationsfrage: "Warum ist Ihre Partei die richtige Wahl f\xFCr einen klimabewussten
+      Menschen?"
+    neutraleAntwort: "Wir haben andere Wege, um mit der L\xF6sung der Klimakrise
+      umzugehen."
+    possibleModifications:
+    - {fileID: 11400000, guid: f2258bf88388b9e2a9f5979446ccde1a, type: 2}
+    - {fileID: 11400000, guid: 186743a674855fd97950b23106875d32, type: 2}
+  - Moderationsfrage: "Welche Vorteile hat Atomenergie f\xFCr die Wirtschaft?"
+    neutraleAntwort: "Atomenergie kann ein Teil der L\xF6sung unserer Energieprobleme
+      sein, bringt aber auch Gefahren mit sich."
     possibleModifications:
     - {fileID: 11400000, guid: 822e21dc8a59e477e9d033f044f4a3ed, type: 2}
+    - {fileID: 11400000, guid: 186743a674855fd97950b23106875d32, type: 2}
+  - Moderationsfrage: Sehen Sie eine Gefahr, wenn unser Land nur noch auf erneuerbare
+      Energie setzt?
+    neutraleAntwort: "Das kann sein, daf\xFCr muss sich aber vorbereitet werden. "
+    possibleModifications:
+    - {fileID: 11400000, guid: 6d384cfe0014e12af8023e5d2d6411f4, type: 2}
     - {fileID: 11400000, guid: ab38e65107457e0f3b95e5c9d262eb99, type: 2}
-  - Moderationsfrage: Frage 3
-    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
-      f\xFCr die n\xE4chsten 4 Jahre."
+  - Moderationsfrage: "Welche L\xF6sungswege haben Sie in der Partei f\xFCr Wettbewerbsf\xE4higkeit
+      trotz Klimawandel?"
+    neutraleAntwort: "Wir haben in unserem Parteiprogramm verschieden konkrete Punkte
+      daf\xFCr."
     possibleModifications:
     - {fileID: 11400000, guid: 9c7920e365547199f9e397253c2a8056, type: 2}
-  - Moderationsfrage: Frage 4
+    - {fileID: 11400000, guid: 186743a674855fd97950b23106875d32, type: 2}
+  - Moderationsfrage: "Wird der Klimawandel Arbeitspl\xE4tze gef\xE4hrden oder erschaffen?"
+    neutraleAntwort: "er Klimawandel kann auch neue Arbeitspl\xE4tze schaen."
+    possibleModifications:
+    - {fileID: 11400000, guid: 18e5fb56a6df376c19db2d4fc7c4f179, type: 2}
+    - {fileID: 11400000, guid: 186743a674855fd97950b23106875d32, type: 2}
+  - Moderationsfrage: "W\xFCrden Sie eher f\xFCr das Wohl der Masse odes des Einzelnen
+      entscheiden?"
+    neutraleAntwort: "Ich setze mich \xFCr die Gesellschat ein."
+    possibleModifications:
+    - {fileID: 11400000, guid: e5ee243b5d4df08c1a285886b495c41f, type: 2}
+    - {fileID: 11400000, guid: 9c7920e365547199f9e397253c2a8056, type: 2}
+  - Moderationsfrage: "W\xFCrden Sie eher f\xFCr das Wohl der Masse odes des Einzelnen
+      entscheiden?"
     neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
       f\xFCr die n\xE4chsten 4 Jahre."
     possibleModifications:
     - {fileID: 11400000, guid: f2258bf88388b9e2a9f5979446ccde1a, type: 2}
-  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
-    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
-      f\xFCr die n\xE4chsten 4 Jahre."
+    - {fileID: 11400000, guid: 822e21dc8a59e477e9d033f044f4a3ed, type: 2}
+  - Moderationsfrage: "Finden Sie, dass wir mit Insell\xF6sungen besser uns stehen
+      w\xFCrden als mit einer Gesamtl\xF6sung?"
+    neutraleAntwort: "Wenn alle mit Holz heizen, h\xE4tten wir zu wenig Holz, also
+      w\xFCrde ich Insell\xF6sungen pr\xE4ferieren. "
+    possibleModifications:
+    - {fileID: 11400000, guid: 18e5fb56a6df376c19db2d4fc7c4f179, type: 2}
+    - {fileID: 11400000, guid: 6d384cfe0014e12af8023e5d2d6411f4, type: 2}
+  - Moderationsfrage: "Finden Sie, dass wir mit Insell\xF6sungen besser uns stehen
+      w\xFCrden als mit einer Gesamtl\xF6sung?"
+    neutraleAntwort: "Kompromisse schlie\xDFen zu k\xF6nnen ist eine wichtige F\xE4higkeit
+      im politischen Diskurs."
     possibleModifications:
     - {fileID: 11400000, guid: 9c7920e365547199f9e397253c2a8056, type: 2}
-    - {fileID: 11400000, guid: 822e21dc8a59e477e9d033f044f4a3ed, type: 2}
-    - {fileID: 11400000, guid: 186743a674855fd97950b23106875d32, type: 2}
-  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
-    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
-      f\xFCr die n\xE4chsten 4 Jahre."
-    possibleModifications: []
+    - {fileID: 11400000, guid: ab38e65107457e0f3b95e5c9d262eb99, type: 2}
+    - {fileID: 11400000, guid: e5ee243b5d4df08c1a285886b495c41f, type: 2}
   spawnArea: {fileID: 819941662}
   scrollRect: {fileID: 419114220}
   dialoguePrefabModerator: {fileID: 7423012826622201095, guid: b683ccd1cacce99fe933abe0f8f7ac17, type: 3}
@@ -6389,15 +6426,15 @@ RectTransform:
   m_GameObject: {fileID: 1933887084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.77019, y: 0.77019, z: 0.77019}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 868332272}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836.067, y: -49.452}
-  m_SizeDelta: {x: 68.766, y: 339.36}
+  m_AnchoredPosition: {x: -868.916, y: -8.152}
+  m_SizeDelta: {x: 107.235, y: 332.431}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933887086
 MonoBehaviour:
@@ -7801,6 +7838,10 @@ PrefabInstance:
     - target: {fileID: 1500469637693350521, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_fontColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758061900868812327, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_text
+      value: Diplomatische Antwort.
       objectReference: {fileID: 0}
     - target: {fileID: 3204309245795612908, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_fontColor.b
