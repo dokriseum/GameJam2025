@@ -9,14 +9,20 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {    
+    public static DialogueManager instance;
     public List<DialogueOption> dialogParameters;
-public Transform spawnArea;
-public ScrollRect scrollRect;
-public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
-private GameObject currentReplyGO;
-public GameObject[] replyIcons;
-public float waitingTimeAfterModeratorAsked;
-private int currentIndex;
+    public Transform spawnArea;
+    public ScrollRect scrollRect;
+    public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
+    private GameObject currentReplyGO;
+    public GameObject[] replyIcons;
+    public float waitingTimeAfterModeratorAsked;
+    private int currentIndex;
+
+    private void Start()
+    {
+        instance = this;
+    }
 
     public void BeginGame()
     {
@@ -45,6 +51,11 @@ private int currentIndex;
     {
         currentIndex++;
         StartCoroutine(StartNewDialogue());
+    }
+
+    public void StartReplyFromSkill(SkillReply reply)
+    {
+        StartReply(reply.linkedSkill);
     }
 
     public void StartReply()
@@ -88,8 +99,6 @@ private int currentIndex;
 
         int possibleModsThisReply = dialogParameters[currentIndex].possibleModifications.Length;
         
-        for(int i = 0; i < 1; i++)
-
         // Hole alle möglichen Modifikationen.
         Skill_SO[] possibleMods = dialogParameters[currentIndex].possibleModifications;
         // Filtere anhand des Skilltrees: nur Fähigkeiten anzeigen, die noch nicht gelernt wurden und freigeschaltet werden können.

@@ -10,6 +10,8 @@ public class Skilltree : MonoBehaviour
     
     public List<Skill> allSkills;
 
+    public string testString;
+
     private void Awake()
     {
         instance = this;
