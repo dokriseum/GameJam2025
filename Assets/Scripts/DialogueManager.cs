@@ -63,7 +63,7 @@ public Transform spawnArea;
         for(int i = 0; i < 2; i++)
         {
             replyIcons[i].SetActive(true);
-            replyIcons[i].GetComponent<SkillReply>();
+            replyIcons[i].GetComponent<SkillReply>().InstantiateSkill(dialogParameters[currentIndex].possibleModifications[i]);
         }
     }
 

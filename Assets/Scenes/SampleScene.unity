@@ -561,6 +561,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &148473974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1007580880240977870, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+  m_PrefabInstance: {fileID: 6462791797472497533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149676211
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +653,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &178390066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4758675794101472613, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+  m_PrefabInstance: {fileID: 6462791797472497533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &181314052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1202,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419114218}
   m_CullTransparentMesh: 1
+--- !u!114 &493301160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5442813532604151061, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+  m_PrefabInstance: {fileID: 6462791797472497533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &499014829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2839,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+--- !u!1 &899079235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5245147633625849273, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+  m_PrefabInstance: {fileID: 6462791797472497533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &899079237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7573375801363932993, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+  m_PrefabInstance: {fileID: 6462791797472497533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899079235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &920535988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4061,6 +4104,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194107906}
   m_CullTransparentMesh: 1
+--- !u!1 &1194821489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 79932868395120531, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+  m_PrefabInstance: {fileID: 6462791797472497533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1238165682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5518,7 +5566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   learnedSkills: []
   allSkills:
-  - {fileID: 0}
+  - {fileID: 8864895262755908134}
   - {fileID: 1155846445}
   - {fileID: 333741884}
   - {fileID: 2145198626}
@@ -5538,12 +5586,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be49bcfc31262cc539aa900bca2ea8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogParameters: []
+  dialogParameters:
+  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
+    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
+      f\xFCr die n\xE4chsten 4 Jahre."
+    possibleModifications: []
+  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
+    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
+      f\xFCr die n\xE4chsten 4 Jahre."
+    possibleModifications: []
+  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
+    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
+      f\xFCr die n\xE4chsten 4 Jahre."
+    possibleModifications:
+    - {fileID: 11400000, guid: ab38e65107457e0f3b95e5c9d262eb99, type: 2}
+  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
+    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
+      f\xFCr die n\xE4chsten 4 Jahre."
+    possibleModifications:
+    - {fileID: 11400000, guid: f2258bf88388b9e2a9f5979446ccde1a, type: 2}
+  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
+    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
+      f\xFCr die n\xE4chsten 4 Jahre."
+    possibleModifications:
+    - {fileID: 11400000, guid: 9c7920e365547199f9e397253c2a8056, type: 2}
+    - {fileID: 11400000, guid: 822e21dc8a59e477e9d033f044f4a3ed, type: 2}
+    - {fileID: 11400000, guid: 186743a674855fd97950b23106875d32, type: 2}
+  - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
+    neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
+      f\xFCr die n\xE4chsten 4 Jahre."
+    possibleModifications: []
   spawnArea: {fileID: 819941662}
   dialoguePrefabModerator: {fileID: 7423012826622201095, guid: b683ccd1cacce99fe933abe0f8f7ac17, type: 3}
   dialoguePrefabPolitician: {fileID: 6016323510668207733, guid: 3f596f7773ea4bd1b81b5b4ce397bbff, type: 3}
   empty: {fileID: 3995528641042132347, guid: 3005c32bf62b446618e7ed62385ce710, type: 3}
   replyOptions: {fileID: 1020675168}
+  replyIcons:
+  - {fileID: 899079235}
+  - {fileID: 1194821489}
+  - {fileID: 148473974}
   waitingTimeAfterModeratorAsked: 0
 --- !u!114 &1634091357
 MonoBehaviour:
@@ -7484,6 +7565,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868332272}
     m_Modifications:
+    - target: {fileID: 2623882503463218478, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 493301160}
+    - target: {fileID: 2623882503463218478, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 899079237}
+    - target: {fileID: 2623882503463218478, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: iconImg
+      value: 
+      objectReference: {fileID: 178390066}
     - target: {fileID: 3429847971318953931, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 194.961
@@ -7604,6 +7697,17 @@ PrefabInstance:
       addedObject: {fileID: 1351020449}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+--- !u!114 &8864895262755908134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6133897440393732428, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+  m_PrefabInstance: {fileID: 2405345464788086570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a5f29f0c0aa352f8a09d61ff8d4a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
