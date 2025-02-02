@@ -13,6 +13,8 @@ public class Skill : MonoBehaviour
 
     public TextMeshProUGUI text;
 
+    public bool isBeginSkill;
+
     private void Start()
     {
         if (linkedSkill == null)
