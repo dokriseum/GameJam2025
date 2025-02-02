@@ -11,14 +11,14 @@ public class DialogueManager : MonoBehaviour
 {    
     public static DialogueManager instance;
     public List<DialogueOption> dialogParameters;
-public Transform spawnArea;
-public ScrollRect scrollRect;
-public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
-private GameObject currentReplyGO;
-public GameObject[] replyIcons;
-public float waitingTimeAfterModeratorAsked;
-private int currentIndex;
-public GameObject skillsUIButton;
+    public Transform spawnArea;
+    public ScrollRect scrollRect;
+    public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
+    private GameObject currentReplyGO;
+    public GameObject[] replyIcons;
+    public float waitingTimeAfterModeratorAsked;
+    private int currentIndex;
+    public GameObject skillsUIButton;
 
     private void Start()
     {
@@ -168,30 +168,45 @@ public GameObject skillsUIButton;
     }
 
     private IEnumerator KIAntwort(Skill_SO modifier, int index)
-{
-    if (modifier == null)
     {
-        Debug.LogError("KIAntwort: modifier ist null. Bitte überprüfe die Zuweisung in den Dialogoptionen.");
-        yield break;
+        if (modifier == null)
+        {
+            Debug.LogError("KIAntwort: modifier ist null. Bitte überprüfe die Zuweisung in den Dialogoptionen.");
+            yield break;
+        }
+    
+        if (PopulismResponseGenerator.instance == null)
+        {
+            Debug.LogError("KIAntwort: PopulismResponseGenerator.instance ist null. Stelle sicher, dass das PopulismResponseGenerator-Skript in der Szene vorhanden ist.");
+            yield break;
+        }
+    
+        if (LLMRunner.instance == null)
+        {
+            Debug.LogError("KIAntwort: LLMRunner.instance ist null. Stelle sicher, dass das LLMRunner-Skript in der Szene vorhanden ist.");
+            yield break;
+        }
+    
+        string modifierName = modifier.name;
+        string neutraleAntwort = dialogParameters[index].neutraleAntwort;
+    
+        PopulismResponseGenerator.instance.GenerateResponse(
+            modifierName,
+            neutraleAntwort,
+            dialogParameters[index].Moderationsfrage,
+            "hf.co/Undi95/Toppy-M-7B-GGUF:Q8_0"
+        );
+        var endResponse = LLMRunner.instance.GetLatestResponse();
+        Debug.LogWarning("_DEBUG_ LLMRunner.instance.GetGeneratedText(): " + endResponse.Response);
+        yield return endResponse;//LLMRunner.instance.WaitForResponse((string generatedText) =>
+        {
+            SetTextForReply(endResponse.Response);
+        }
+        //);
     }
 
-    string modifierName = modifier.name;
-    string neutraleAntwort = dialogParameters[index].neutraleAntwort;
 
-    // Starte die Anfrage an den LLM
-    PopulismResponseGenerator.instance.GenerateResponse(
-        modifierName,
-        neutraleAntwort,
-        dialogParameters[index].Moderationsfrage,
-        "hf.co/Undi95/Toppy-M-7B-GGUF:Q8_0"
-    );
 
-    // Warte, bis der LLMRunner eine Antwort generiert hat und rufe den Callback auf
-    yield return LLMRunner.instance.WaitForResponse((string generatedText) =>
-    {
-        SetTextForReply(generatedText);
-    });
-}
 
     private IEnumerator WaitAfterReplyChosen()
     {
