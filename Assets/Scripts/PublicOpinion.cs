@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class PublicOpinion : MonoBehaviour
 {
     public static PublicOpinion instance;
-
     private int currentOpinion;
     private int opinionToSpend;
-
     public TextMeshProUGUI opinionText;
     public Image opinionBar;
 
-    public void Start()
+    public void Awake()
    {
       instance = this;
       currentOpinion = opinionToSpend = 100;
