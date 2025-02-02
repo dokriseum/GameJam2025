@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PopulismResponseGenerator : MonoBehaviour
 {
+    public static PopulismResponseGenerator instance;
+    
+    private void Awake()
+    {
+        instance = this;
+    }
+    
     /// <summary>
     /// Diese Methode nimmt die Fähigkeit, den Basistext und die Moderatorfrage entgegen,
     /// baut daraus einen Prompt und startet den Anfrageprozess.
@@ -15,7 +22,7 @@ public class PopulismResponseGenerator : MonoBehaviour
     {
         if (cModel == null)
         {
-            cModel = "mistral:latest";
+            cModel = "hf.co/Undi95/Toppy-M-7B-GGUF:Q8_0";
         }
         // Erstelle den Prompt, der alle Informationen enthält.
         string prompt = BuildPrompt(cFaehigkeit, cNeutralAnwort, cFrage);
