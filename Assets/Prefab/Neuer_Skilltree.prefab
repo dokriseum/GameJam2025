@@ -406,6 +406,7 @@ RectTransform:
   - {fileID: 2617710940255108664}
   - {fileID: 3436049724463322232}
   - {fileID: 2377502332680345981}
+  - {fileID: 2538234284407579333}
   - {fileID: 5555330440743329985}
   - {fileID: 6026025868808345988}
   - {fileID: 1612324099334602790}
@@ -414,7 +415,6 @@ RectTransform:
   - {fileID: 7014587953405158571}
   - {fileID: 1288326612825741420}
   - {fileID: 3161480842947396801}
-  - {fileID: 2538234284407579333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 5429208406895751761}
   - component: {fileID: 4312900322881963556}
   m_Layer: 5
-  m_Name: Skill_Prefab__
+  m_Name: Beginn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1053,6 +1053,7 @@ MonoBehaviour:
   button: {fileID: 0}
   neededSkillsUnlocked: []
   text: {fileID: 0}
+  isBeginSkill: 0
 --- !u!1 &6466151167635545931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,6 +1966,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 31.95
       objectReference: {fileID: 0}
+    - target: {fileID: 3218929721737937883, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3452480183977896823, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_Name
       value: "S\xFCd"
@@ -2101,6 +2106,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6754611806915682536, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000012636
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754611806915682536, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2126,6 +2139,10 @@ PrefabInstance:
     - target: {fileID: 3218929721737937883, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_text
       value: "Angst sch\xFCren"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218929721737937883, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 3452480183977896823, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_Name
@@ -2231,6 +2248,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6754611806915682536, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754611806915682536, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -126
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2275,6 +2300,10 @@ PrefabInstance:
     - target: {fileID: 3218929721737937883, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_fontSize
       value: 32.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218929721737937883, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 3452480183977896823, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_Name
@@ -2411,6 +2440,14 @@ PrefabInstance:
     - target: {fileID: 6507561600655720527, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754611806915682536, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000084639
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754611806915682536, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -150,8 +150,11 @@ MonoBehaviour:
   linkedSkill: {fileID: 0}
   iconImg: {fileID: 2677702209642642347}
   button: {fileID: 1024890791324684687}
+  colorWhenBought: {r: 1, g: 0.2971698, b: 0.47683898, a: 1}
   neededSkillsUnlocked: []
+  linkedLinesIncoming: []
   text: {fileID: 3218929721737937883}
+  isBeginSkill: 0
 --- !u!1 &7285702468235896659
 GameObject:
   m_ObjectHideFlags: 0
