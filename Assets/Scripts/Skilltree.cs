@@ -42,7 +42,7 @@ public class Skilltree : MonoBehaviour
     {
         foreach(Skill skill in allSkills)
         {
-            skill.SetInteractableState(CanAddThisSkill(skill.linkedSkill));
+            //skill.SetInteractableState(CanAddThisSkill(skill.linkedSkill));
         }
     }
 }
