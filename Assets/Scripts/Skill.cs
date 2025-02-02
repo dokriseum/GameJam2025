@@ -9,6 +9,7 @@ public class Skill : MonoBehaviour
     public Skill_SO linkedSkill;
     public Image iconImg;
     public Button button;
+    public Skill[] neededSkillsUnlocked;
 
     public TextMeshProUGUI text;
 
