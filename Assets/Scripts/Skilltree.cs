@@ -50,6 +50,6 @@ public class Skilltree : MonoBehaviour
     {
         // Überprüfen ob es vorhanden ist in Übergabeparameter 
 
-        return // Boolean (True) wenn vorhanden
+        //return // Boolean (True) wenn vorhanden
     }
 }
