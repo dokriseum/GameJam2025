@@ -111,6 +111,7 @@ public GameObject skillsUIButton;
 
         // Alle Icons aktivieren, damit sie sichtbar bleiben
         for (int i = 0; i < replyIcons.Length; i++)
+
         {
             replyIcons[i].SetActive(i < possibleMods.Length);
         }
