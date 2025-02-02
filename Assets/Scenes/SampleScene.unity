@@ -2859,6 +2859,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5245147633625849273, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
   m_PrefabInstance: {fileID: 6462791797472497533}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &899079241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2623882503463218478, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+  m_PrefabInstance: {fileID: 6462791797472497533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899079235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec7c399d81958d6b9165ca93caa421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &920535988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,6 +5593,7 @@ MonoBehaviour:
   - {fileID: 869640773}
   - {fileID: 1804926357}
   - {fileID: 1924912322}
+  testString: 
 --- !u!114 &1634091356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,7 +5610,8 @@ MonoBehaviour:
   - Moderationsfrage: "Fangen wir an. Warum ist die n\xE4chste Wahl so wichtig?"
     neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
       f\xFCr die n\xE4chsten 4 Jahre."
-    possibleModifications: []
+    possibleModifications:
+    - {fileID: 11400000, guid: 6d384cfe0014e12af8023e5d2d6411f4, type: 2}
   - Moderationsfrage: Frage 2
     neutraleAntwort: "Weil Wahlen immer wichtig sind. Sie bestimmen die Regierung
       f\xFCr die n\xE4chsten 4 Jahre."
@@ -5625,11 +5638,11 @@ MonoBehaviour:
       f\xFCr die n\xE4chsten 4 Jahre."
     possibleModifications: []
   spawnArea: {fileID: 819941662}
+  scrollRect: {fileID: 419114220}
   dialoguePrefabModerator: {fileID: 7423012826622201095, guid: b683ccd1cacce99fe933abe0f8f7ac17, type: 3}
   dialoguePrefabPolitician: {fileID: 6016323510668207733, guid: 3f596f7773ea4bd1b81b5b4ce397bbff, type: 3}
   empty: {fileID: 3995528641042132347, guid: 3005c32bf62b446618e7ed62385ce710, type: 3}
   replyOptions: {fileID: 1020675168}
-  scrollRect: {fileID: 419114220}
   replyIcons:
   - {fileID: 899079235}
   - {fileID: 1194821489}
@@ -7574,6 +7587,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868332272}
     m_Modifications:
+    - target: {fileID: 4758675794101472613, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9082789242079819192, guid: 5293b508b7f0c60f59083ca7bc71fcb5, type: 3}
     - target: {fileID: 6997456282902272089, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -7601,6 +7618,30 @@ PrefabInstance:
     - target: {fileID: 6997456282902272089, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573375801363932993, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573375801363932993, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1634091356}
+    - target: {fileID: 7573375801363932993, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartReplyFromSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573375801363932993, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573375801363932993, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 899079241}
+    - target: {fileID: 7573375801363932993, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: SkillReply, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8845549895514725991, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_Name

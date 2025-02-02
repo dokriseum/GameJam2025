@@ -11,13 +11,13 @@ public class DialogueManager : MonoBehaviour
 {    
     public static DialogueManager instance;
     public List<DialogueOption> dialogParameters;
-public Transform spawnArea;
-public ScrollRect scrollRect;
-public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
-private GameObject currentReplyGO;
-public GameObject[] replyIcons;
-public float waitingTimeAfterModeratorAsked;
-private int currentIndex;
+    public Transform spawnArea;
+    public ScrollRect scrollRect;
+    public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
+    private GameObject currentReplyGO;
+    public GameObject[] replyIcons;
+    public float waitingTimeAfterModeratorAsked;
+    private int currentIndex;
 
     private void Start()
     {
