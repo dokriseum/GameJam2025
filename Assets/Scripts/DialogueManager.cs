@@ -91,10 +91,14 @@ private int currentIndex;
         for(int i = 0; i < 1; i++)
 
         // Hole alle möglichen Modifikationen.
-        Skill_SO[] possibleMods = dialogParameters[currentIndex].possibleModifications;
+        {
+            Skill_SO[] possibleMods;
+            possibleMods = dialogParameters[currentIndex].possibleModifications;
+        }
+
         // Filtere anhand des Skilltrees: nur Fähigkeiten anzeigen, die noch nicht gelernt wurden und freigeschaltet werden können.
         List<Skill_SO> availableMods = new List<Skill_SO>();
-        foreach(Skill_SO mod in possibleMods)
+        foreach(Skill_SO mod in possibleModsThisReply)
         {
             if(Skilltree.instance.CanAddThisSkill(mod))
             {
