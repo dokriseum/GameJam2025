@@ -11,7 +11,15 @@ PrefabInstance:
     - target: {fileID: 1024890791324684687, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 7318757908352994945}
+    - target: {fileID: 1024890791324684687, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2677702209642642347, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4328132807295106905, guid: a6ad8e72a494a42b4bdedc43c6a99e41, type: 3}
     - target: {fileID: 3452480183977896823, guid: 258eccf1186e249e7bfbf4b564705e97, type: 3}
       propertyPath: m_Name
       value: Choice Prefab
@@ -122,3 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec7c399d81958d6b9165ca93caa421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedSkill: {fileID: 0}
+  iconImg: {fileID: 0}
+  button: {fileID: 0}
+  text: {fileID: 0}
