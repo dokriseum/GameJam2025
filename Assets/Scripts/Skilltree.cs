@@ -37,12 +37,13 @@ public class Skilltree : MonoBehaviour
         && PublicOpinion.instance.GetCurrentOpinion() >= skill.minPopularityScoreToUnlock 
         && PublicOpinion.instance.GetCanByWithOpinion(10);
     }
-
+    
     public void UpdateSkillStates()
     {
         foreach(Skill skill in allSkills)
         {
-            //skill.SetInteractableState(CanAddThisSkill(skill.linkedSkill));
+            // Setze den Button-Status, ob die Fähigkeit gekauft werden kann.
+            skill.SetInteractableState(CanAddThisSkill(skill.linkedSkill));
         }
     }
 }

@@ -8,8 +8,18 @@ public class SkillReply : Skill
     private string replyPreview; // 1 satz als preview
     public void ThisSkillWasChosen()
     {
-
+        // Füge die ausgewählte Fähigkeit zum Skilltree hinzu.
+        if (linkedSkill != null && Skilltree.instance.CanAddThisSkill(linkedSkill))
+        {
+            Skilltree.instance.AddNewSkill(linkedSkill);
+            // Optional: Rückmeldung an den Spieler, Animationen etc.
+        }
+        else
+        {
+            Debug.Log("Diese Fähigkeit kann nicht ausgewählt werden.");
+        }
     }
+
 
     public void InstantiateSkill(Skill_SO withSkill)
     {
