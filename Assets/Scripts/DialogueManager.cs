@@ -139,12 +139,33 @@ private int currentIndex;
         string modifierName = modifier.name;
         string neutraleAntwort = dialogParameters[index].neutraleAntwort;
         string hierKommtDieAntwortRein = "An Ihre Frage kann ich mich leider nicht erinnern.";
-
+        LLMRunner.instance.StartRequest(modifierName, neutraleAntwort);
         // Hier startest du die KI mit dem "Modifier name" (das ist der Skill, z.B. Angst schüren) und lässt damit die neutrale Antwort bearbeiten
-         yield return new WaitForSeconds(2f);
-          
-         // Juchu, antwort ist fertig gebacken
-         SetTextForReply(hierKommtDieAntwortRein);         
+        //yield return new WaitForSeconds(2f);
+        
+        // Version 1 mit OllamaResponse-Onjekt
+        OllamaResponse kiAntwortOR = null;
+        yield return LLMRunner.instance.WaitForResponse((response) =>
+        {
+            kiAntwortOR = response;
+        });
+        if (kiAntwortOR != null && kiAntwortOR.choices != null && kiAntwortOR.choices.Length > 0)
+        {
+            SetTextForReply(kiAntwortOR.Response); // Nur den generierten Text setzen
+        }
+        else
+        {
+            SetTextForReply("Fehler beim Laden der Antwort.");
+        }
+        
+        // Version 2 mit String
+        /****
+        yield return LLMRunner.instance.WaitForResponse((responseText) =>
+        {
+            hierKommtDieAntwortRein = responseText;
+        });
+        yield return LLMRunner.instance.WaitForResponse();
+         *****/
     }
 
     private IEnumerator WaitAfterReplyChosen()
@@ -152,6 +173,5 @@ private int currentIndex;
         yield return new WaitForSeconds(waitingTimeAfterModeratorAsked);
         Debug.Log("Done waiting");
         GoToNextQuestion();
-
     }
 }
