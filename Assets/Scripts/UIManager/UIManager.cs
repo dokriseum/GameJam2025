@@ -17,5 +17,4 @@ namespace UIManager
             llmRunner.StartRequest(model, prompt);
         }
     }
-
 }
