@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6507561600655720527}
   - component: {fileID: 8892038421535644061}
   - component: {fileID: 3615953074990846171}
-  - component: {fileID: 6133897440393732428}
   - component: {fileID: 1024890791324684687}
+  - component: {fileID: 8745601262065829738}
   m_Layer: 5
   m_Name: Skill Prefab
   m_TagString: Untagged
@@ -79,22 +79,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6133897440393732428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3452480183977896823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8a5f29f0c0aa352f8a09d61ff8d4a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linkedSkill: {fileID: 11400000, guid: ab38e65107457e0f3b95e5c9d262eb99, type: 2}
-  iconImg: {fileID: 2677702209642642347}
-  button: {fileID: 1024890791324684687}
-  text: {fileID: 3218929721737937883}
 --- !u!114 &1024890791324684687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6133897440393732428}
+      - m_Target: {fileID: 8745601262065829738}
         m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: BuySkill
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -151,6 +135,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8745601262065829738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452480183977896823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec7c399d81958d6b9165ca93caa421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedSkill: {fileID: 0}
+  iconImg: {fileID: 2677702209642642347}
+  button: {fileID: 1024890791324684687}
+  text: {fileID: 3218929721737937883}
 --- !u!1 &7285702468235896659
 GameObject:
   m_ObjectHideFlags: 0
