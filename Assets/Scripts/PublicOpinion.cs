@@ -11,6 +11,14 @@ public class PublicOpinion : MonoBehaviour
     public TextMeshProUGUI opinionText;
     public Image opinionBar;
 
+    public GameObject opinionChangedPrefab;
+    public Transform whereToSpawnOpinionChange;
+
+    private void Update()
+    {
+        opinionText.text = currentOpinion.ToString();
+    }
+
     public void Awake()
    {
       instance = this;
@@ -20,6 +28,8 @@ public class PublicOpinion : MonoBehaviour
     public void IncreaseOpinion(int byScore)
     {
         currentOpinion += byScore;
+        GameObject newObj = Instantiate(opinionChangedPrefab, whereToSpawnOpinionChange);
+        newObj.GetComponent<ScoreUpdated>().InstantiateScoreAdd(byScore);
         if(currentOpinion >= 100)
         {
             GameWon();

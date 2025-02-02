@@ -11,13 +11,14 @@ public class DialogueManager : MonoBehaviour
 {    
     public static DialogueManager instance;
     public List<DialogueOption> dialogParameters;
-    public Transform spawnArea;
-    public ScrollRect scrollRect;
-    public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
-    private GameObject currentReplyGO;
-    public GameObject[] replyIcons;
-    public float waitingTimeAfterModeratorAsked;
-    private int currentIndex;
+public Transform spawnArea;
+public ScrollRect scrollRect;
+public GameObject dialoguePrefabModerator, dialoguePrefabPolitician, empty, replyOptions;
+private GameObject currentReplyGO;
+public GameObject[] replyIcons;
+public float waitingTimeAfterModeratorAsked;
+private int currentIndex;
+public GameObject skillsUIButton;
 
     private void Start()
     {
@@ -43,6 +44,8 @@ public class DialogueManager : MonoBehaviour
         {
             SetTextForReply(dialogParameters[currentIndex].neutraleAntwort);
         }
+
+        PublicOpinion.instance.IncreaseOpinion(6);
 
         StartCoroutine(WaitAfterReplyChosen());
     }
@@ -77,6 +80,7 @@ public class DialogueManager : MonoBehaviour
         Instantiate(empty, spawnArea);
         ScrollToBottom();
         yield return new WaitForSeconds(waitingTimeAfterModeratorAsked);
+        skillsUIButton.SetActive(true);
         Instantiate(empty, spawnArea);
         currentReplyGO = Instantiate(dialoguePrefabPolitician, spawnArea);
         ScrollToBottom();
@@ -99,47 +103,63 @@ public class DialogueManager : MonoBehaviour
 
         int possibleModsThisReply = dialogParameters[currentIndex].possibleModifications.Length;
         
-        // Hole alle möglichen Modifikationen.
-        {
-            Skill_SO[] possibleMods;
-            possibleMods = dialogParameters[currentIndex].possibleModifications;
-        }
-
         // Filtere anhand des Skilltrees: nur Fähigkeiten anzeigen, die noch nicht gelernt wurden und freigeschaltet werden können.
         List<Skill_SO> availableMods = new List<Skill_SO>();
-        foreach(Skill_SO mod in possibleModsThisReply)
+
+        // Hole alle möglichen Modifikationen.
+        Skill_SO[] possibleMods = dialogParameters[currentIndex].possibleModifications;
+
+        // Alle Icons aktivieren, damit sie sichtbar bleiben
+        for (int i = 0; i < replyIcons.Length; i++)
+
         {
-            if(Skilltree.instance.CanAddThisSkill(mod))
+            replyIcons[i].SetActive(i < possibleMods.Length);
+        }
+
+        // Gehe durch alle möglichen Mods und setze ihre Anzeige
+        for (int i = 0; i < possibleMods.Length; i++)
+        {
+            Skill_SO mod = possibleMods[i];
+            SkillReply skillReply = replyIcons[i].GetComponent<SkillReply>();
+
+            if (Skilltree.instance.GetIsSkillLearned(mod))
+            {
+                skillReply.InstantiateSkill(mod); // Zeigt den Skill normal an
+                skillReply.SetStateOfLockedUI(false); // Falls du ein visuelles Lock hast
+            }
+            else
+            {
+                skillReply.InstantiateSkill(mod); // Zeigt den Skill trotzdem an
+                skillReply.SetStateOfLockedUI(true);  // Zeigt, dass er gesperrt ist (z.B. grau hinterlegt)
+            }
+        }
+
+        
+        /*
+
+        foreach (Skill_SO mod in possibleMods)
+        {
+            if (Skilltree.instance.GetIsSkillLearned(mod))
             {
                 availableMods.Add(mod);
             }
         }
-    
-        // Nun: Ist die Anzahl der verfügbaren Fähigkeiten >= 3?
-        if (availableMods.Count >= 3)
+
+        // Aktiviere so viele Icons, wie es verfügbare Modifikationen gibt (maximal 3)
+        int modsToShow = Mathf.Min(possibleModsThisReply, availableMods.Count);
+
+        for (int i = 0; i < modsToShow; i++)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                replyIcons[i].SetActive(true);
-                replyIcons[i].GetComponent<SkillReply>().InstantiateSkill(availableMods[i]);
-            }
+            replyIcons[i].SetActive(true);
+            replyIcons[i].GetComponent<SkillReply>().InstantiateSkill(availableMods[i]);
         }
-        else
+
+        // Deaktiviere die restlichen Icons, falls es weniger verfügbare Modifikationen gibt
+        for (int i = modsToShow; i < replyIcons.Length; i++)
         {
-            // Hier kannst du entscheiden, ob du einen Fallback-Dialog starten oder nur so viele Optionen anzeigen möchtest.
-            Debug.Log("Nicht genügend passende Fähigkeiten freigeschaltet.");
-            // Beispiel: Zeige alle verfügbaren Fähigkeiten an.
-            for (int i = 0; i < availableMods.Count; i++)
-            {
-                replyIcons[i].SetActive(true);
-                replyIcons[i].GetComponent<SkillReply>().InstantiateSkill(availableMods[i]);
-            }
-            // Deaktiviere restliche Icons
-            for (int i = availableMods.Count; i < replyIcons.Length; i++)
-            {
-                replyIcons[i].SetActive(false);
-            }
+            replyIcons[i].SetActive(false);
         }
+        */
     }
 
     public void SetQuestionByModerator(TextMeshProUGUI toTextObj, string withReply)
@@ -151,34 +171,13 @@ public class DialogueManager : MonoBehaviour
     {
         string modifierName = modifier.name;
         string neutraleAntwort = dialogParameters[index].neutraleAntwort;
-        string hierKommtDieAntwortRein = "An Ihre Frage kann ich mich leider nicht erinnern.";
-        LLMRunner.instance.StartRequest(modifierName, neutraleAntwort);
+        string hierKommtDieAntwortRein = "An Ihre Frage kann ich mich leider nicht erinnern. (Fehler mit der KI-Generierung)";
+
         // Hier startest du die KI mit dem "Modifier name" (das ist der Skill, z.B. Angst schüren) und lässt damit die neutrale Antwort bearbeiten
-        //yield return new WaitForSeconds(2f);
-        
-        // Version 1 mit OllamaResponse-Onjekt
-        OllamaResponse kiAntwortOR = null;
-        yield return LLMRunner.instance.WaitForResponse((response) =>
-        {
-            kiAntwortOR = response;
-        });
-        if (kiAntwortOR != null && kiAntwortOR.choices != null && kiAntwortOR.choices.Length > 0)
-        {
-            SetTextForReply(kiAntwortOR.Response); // Nur den generierten Text setzen
-        }
-        else
-        {
-            SetTextForReply("Fehler beim Laden der Antwort.");
-        }
-        
-        // Version 2 mit String
-        /****
-        yield return LLMRunner.instance.WaitForResponse((responseText) =>
-        {
-            hierKommtDieAntwortRein = responseText;
-        });
-        yield return LLMRunner.instance.WaitForResponse();
-         *****/
+         yield return new WaitForSeconds(2f);
+          
+         // Juchu, antwort ist fertig gebacken
+         SetTextForReply(hierKommtDieAntwortRein);         
     }
 
     private IEnumerator WaitAfterReplyChosen()
@@ -186,5 +185,6 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(waitingTimeAfterModeratorAsked);
         Debug.Log("Done waiting");
         GoToNextQuestion();
+
     }
 }
