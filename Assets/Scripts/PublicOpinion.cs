@@ -44,7 +44,7 @@ public class PublicOpinion : MonoBehaviour
     private void RefreshBar()
     {
         Debug.Log(currentOpinion / 100);
-        opinionBar.fillAmount = currentOpinion / 100;
+        opinionBar.fillAmount = (float)currentOpinion / 100;
     }
 
     public void BuyWithOpinion(int opinionValue)
