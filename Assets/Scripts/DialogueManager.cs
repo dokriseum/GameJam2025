@@ -102,11 +102,39 @@ public GameObject skillsUIButton;
         neutralText.text = dialogParameters[currentIndex].neutraleAntwort;
 
         int possibleModsThisReply = dialogParameters[currentIndex].possibleModifications.Length;
+        
+        // Filtere anhand des Skilltrees: nur Fähigkeiten anzeigen, die noch nicht gelernt wurden und freigeschaltet werden können.
+        List<Skill_SO> availableMods = new List<Skill_SO>();
 
         // Hole alle möglichen Modifikationen.
         Skill_SO[] possibleMods = dialogParameters[currentIndex].possibleModifications;
-        // Filtere anhand des Skilltrees: nur Fähigkeiten anzeigen, die noch nicht gelernt wurden und freigeschaltet werden können.
-        List<Skill_SO> availableMods = new List<Skill_SO>();
+
+        // Alle Icons aktivieren, damit sie sichtbar bleiben
+        for (int i = 0; i < replyIcons.Length; i++)
+        {
+            replyIcons[i].SetActive(i < possibleMods.Length);
+        }
+
+        // Gehe durch alle möglichen Mods und setze ihre Anzeige
+        for (int i = 0; i < possibleMods.Length; i++)
+        {
+            Skill_SO mod = possibleMods[i];
+            SkillReply skillReply = replyIcons[i].GetComponent<SkillReply>();
+
+            if (Skilltree.instance.GetIsSkillLearned(mod))
+            {
+                skillReply.InstantiateSkill(mod); // Zeigt den Skill normal an
+                skillReply.SetStateOfLockedUI(false); // Falls du ein visuelles Lock hast
+            }
+            else
+            {
+                skillReply.InstantiateSkill(mod); // Zeigt den Skill trotzdem an
+                skillReply.SetStateOfLockedUI(true);  // Zeigt, dass er gesperrt ist (z.B. grau hinterlegt)
+            }
+        }
+
+        
+        /*
 
         foreach (Skill_SO mod in possibleMods)
         {
@@ -130,7 +158,7 @@ public GameObject skillsUIButton;
         {
             replyIcons[i].SetActive(false);
         }
-
+        */
     }
 
     public void SetQuestionByModerator(TextMeshProUGUI toTextObj, string withReply)
@@ -142,7 +170,7 @@ public GameObject skillsUIButton;
     {
         string modifierName = modifier.name;
         string neutraleAntwort = dialogParameters[index].neutraleAntwort;
-        string hierKommtDieAntwortRein = "An Ihre Frage kann ich mich leider nicht erinnern.";
+        string hierKommtDieAntwortRein = "An Ihre Frage kann ich mich leider nicht erinnern. (Fehler mit der KI-Generierung)";
 
         // Hier startest du die KI mit dem "Modifier name" (das ist der Skill, z.B. Angst schüren) und lässt damit die neutrale Antwort bearbeiten
          yield return new WaitForSeconds(2f);

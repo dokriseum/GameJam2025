@@ -7549,6 +7549,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868332272}
     m_Modifications:
+    - target: {fileID: 4793533319110048702, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -340.607
+      objectReference: {fileID: 0}
     - target: {fileID: 4797484075665116808, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
@@ -7601,6 +7605,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1634091356}
+    - target: {fileID: 8062002763191733989, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -270
+      objectReference: {fileID: 0}
     - target: {fileID: 8067046157279542227, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
@@ -7624,6 +7632,10 @@ PrefabInstance:
     - target: {fileID: 8067046157279542227, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: SkillReply, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800964201180864811, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: 8845549895514725991, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_Name
@@ -7699,7 +7711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177051157070693398, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 79.301
+      value: 11.67
       objectReference: {fileID: 0}
     - target: {fileID: 9177051157070693398, guid: 15eaaa74b2d4d7854b48c20d550e609a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

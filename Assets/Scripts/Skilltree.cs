@@ -36,6 +36,7 @@ public class Skilltree : MonoBehaviour
     {
         Debug.Log("learned new skill " + skill.name);
         learnedSkills.Add(skill);
+        DialogueManager.instance.UpdateReplyOptions();
     }
 
     public bool CanAddThisSkill(Skill skill)

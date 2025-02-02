@@ -30,7 +30,6 @@ public class PublicOpinion : MonoBehaviour
         currentOpinion += byScore;
         GameObject newObj = Instantiate(opinionChangedPrefab, whereToSpawnOpinionChange);
         newObj.GetComponent<ScoreUpdated>().InstantiateScoreAdd(byScore);
-        Debug.LogError("op changed");
         if(currentOpinion >= 100)
         {
             GameWon();
