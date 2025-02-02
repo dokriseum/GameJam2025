@@ -14,6 +14,8 @@ public class PublicOpinion : MonoBehaviour
     public GameObject opinionChangedPrefab;
     public Transform whereToSpawnOpinionChange;
 
+    public GameObject audience;
+
     private void Update()
     {
         opinionText.text = currentOpinion.ToString();
@@ -22,18 +24,27 @@ public class PublicOpinion : MonoBehaviour
     public void Awake()
    {
       instance = this;
-      currentOpinion = opinionToSpend = 100;
+      currentOpinion = opinionToSpend = 50;
    }
 
     public void IncreaseOpinion(int byScore)
     {
         currentOpinion += byScore;
+        opinionToSpend += byScore;
         GameObject newObj = Instantiate(opinionChangedPrefab, whereToSpawnOpinionChange);
         newObj.GetComponent<ScoreUpdated>().InstantiateScoreAdd(byScore);
+        LeanTween.moveLocalY(audience, -0.003f, 0.2f).setLoopPingPong(byScore);
+        RefreshBar();
         if(currentOpinion >= 100)
         {
             GameWon();
         }
+    }
+
+    private void RefreshBar()
+    {
+        Debug.Log(currentOpinion / 100);
+        opinionBar.fillAmount = currentOpinion / 100;
     }
 
     public void BuyWithOpinion(int opinionValue)

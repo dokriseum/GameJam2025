@@ -167,17 +167,30 @@ public GameObject skillsUIButton;
     }
 
     private IEnumerator KIAntwort(Skill_SO modifier, int index)
+{
+    if (modifier == null)
     {
-        string modifierName = modifier.name;
-        string neutraleAntwort = dialogParameters[index].neutraleAntwort;
-        string hierKommtDieAntwortRein = "An Ihre Frage kann ich mich leider nicht erinnern. (Fehler mit der KI-Generierung)";
-
-        // Hier startest du die KI mit dem "Modifier name" (das ist der Skill, z.B. Angst schüren) und lässt damit die neutrale Antwort bearbeiten
-         yield return new WaitForSeconds(2f);
-          
-         // Juchu, antwort ist fertig gebacken
-         SetTextForReply(hierKommtDieAntwortRein);         
+        Debug.LogError("KIAntwort: modifier ist null. Bitte überprüfe die Zuweisung in den Dialogoptionen.");
+        yield break;
     }
+
+    string modifierName = modifier.name;
+    string neutraleAntwort = dialogParameters[index].neutraleAntwort;
+
+    // Starte die Anfrage an den LLM
+    PopulismResponseGenerator.instance.GenerateResponse(
+        modifierName,
+        neutraleAntwort,
+        dialogParameters[index].Moderationsfrage,
+        "hf.co/Undi95/Toppy-M-7B-GGUF:Q8_0"
+    );
+
+    // Warte, bis der LLMRunner eine Antwort generiert hat und rufe den Callback auf
+    yield return LLMRunner.instance.WaitForResponse((string generatedText) =>
+    {
+        SetTextForReply(generatedText);
+    });
+}
 
     private IEnumerator WaitAfterReplyChosen()
     {
